@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>HTTP协议</title>
+      <link href="/2024/08/07/HTTP%E5%8D%8F%E8%AE%AE/"/>
+      <url>/2024/08/07/HTTP%E5%8D%8F%E8%AE%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><h2 id="1-HTTP协议简介"><a href="#1-HTTP协议简介" class="headerlink" title="1.HTTP协议简介"></a>1.HTTP协议简介</h2><p>HTTP：Hyper Text Transfer Protocol(超文本传输协议)，规定了浏览器与服务器之间数据传输的规则。</p><h3 id="HTTP是基于TCP协议的"><a href="#HTTP是基于TCP协议的" class="headerlink" title="HTTP是基于TCP协议的"></a>HTTP是基于TCP协议的</h3><h3 id="HTTP是无连接的"><a href="#HTTP是无连接的" class="headerlink" title="HTTP是无连接的"></a>HTTP是无连接的</h3><p>无连接的含义是限制每次连接只能处理一个请求，处理完请求后会断开连接</p><h3 id="HTTP是无状态的"><a href="#HTTP是无状态的" class="headerlink" title="HTTP是无状态的"></a>HTTP是无状态的</h3><p>对于数据没有记忆能力。每次请求-响应都是独立的。请求之间不会共享数据</p><h3 id="HTTP分为请求协议和响应协议"><a href="#HTTP分为请求协议和响应协议" class="headerlink" title="HTTP分为请求协议和响应协议"></a>HTTP分为请求协议和响应协议</h3><h2 id="2-HTTP-请求协议"><a href="#2-HTTP-请求协议" class="headerlink" title="2.HTTP-请求协议"></a>2.HTTP-请求协议</h2><p>浏览器将数据以请求格式发送到服务器，由四部分组成：<strong>请求行</strong>，<strong>请求头</strong>，<strong>空行</strong>，<strong>请求体</strong></p><h3 id="一般格式："><a href="#一般格式：" class="headerlink" title="一般格式："></a>一般格式：</h3><p><img src="https://smartsageblogfile.oss-cn-beijing.aliyuncs.com/blogimages/202408072259146.png" alt="">  </p><p><strong>请求行</strong>（Request Line）：</p><ul><li><strong>方法</strong>：如 GET、POST、PUT、DELETE等，指定要执行的操作。</li><li><strong>请求 URI</strong>（统一资源标识符）：请求的资源路径，通常包括主机名、端口号（如果非默认）、路径和查询字符串。</li><li><strong>HTTP 版本</strong>：如 HTTP/1.1 或 HTTP/2。</li></ul><p>请求行的格式示例：<code>GET /index.html HTTP/1.1</code></p><p><strong>请求头</strong>（Request Headers）：</p><ul><li><p>格式为key: value形式 </p></li><li><p>包含了客户端环境信息、请求体的大小（如果有）、客户端支持的压缩类型等。</p></li><li><p>常见的请求头包括<code>Host</code>、<code>User-Agent</code>、<code>Accept</code>、<code>Accept-Encoding</code>、<code>Content-Length</code>等。</p></li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Host: 表示请求的主机名</span><br><span class="line"></span><br><span class="line">User-Agent: 浏览器版本。 例如：Chrome浏览器的标识类似Mozilla/5.0 ...Chrome/79 ，IE浏览器的标识类似Mozilla/5.0 (Windows NT ...)like Gecko</span><br><span class="line"></span><br><span class="line">Accept：表示浏览器能接收的资源类型，如text/*，image/*或者*/*表示所有；</span><br><span class="line"></span><br><span class="line">Accept-Language：表示浏览器偏好的语言，服务器可以据此返回不同语言的网页；</span><br><span class="line"></span><br><span class="line">Accept-Encoding：表示浏览器可以支持的压缩类型，例如gzip, deflate等。</span><br><span class="line"></span><br><span class="line">Content-Type：请求主体的数据类型</span><br><span class="line"></span><br><span class="line">Content-Length：数据主体的大小（单位：字节）</span><br></pre></td></tr></table></figure><p><strong>空行</strong>：</p><ul><li>请求头和请求体之间的分隔符，表示请求头的结束。</li></ul><p><strong>请求体</strong>（可选）：</p><ul><li><p>在某些类型的HTTP请求（如 POST 和 PUT）中，请求体包含要发送给服务器的数据。</p></li><li><p>GET请求中，请求参数放在了请求行中的地址中</p></li></ul><h3 id="在HTTP1-1版本中，浏览器访问服务器的几种方式："><a href="#在HTTP1-1版本中，浏览器访问服务器的几种方式：" class="headerlink" title="在HTTP1.1版本中，浏览器访问服务器的几种方式："></a>在HTTP1.1版本中，浏览器访问服务器的几种方式：</h3><div class="table-container"><table><thead><tr><th style="text-align:center">请求方式</th><th style="text-align:left">请求说明</th></tr></thead><tbody><tr><td style="text-align:center"><strong>GET</strong></td><td style="text-align:left">获取资源。<br/>向特定的资源发出请求。例：<a href="http://www.baidu.com/s?wd=http">http://www.baidu.com/s?wd=http</a></td></tr><tr><td style="text-align:center"><strong>POST</strong></td><td style="text-align:left">传输实体主体。<br/>向指定资源提交数据进行处理请求（例：上传文件），数据被包含在请求体中。</td></tr><tr><td style="text-align:center">OPTIONS</td><td style="text-align:left">返回服务器针对特定资源所支持的HTTP请求方式。<br/>因为并不是所有的服务器都支持规定的方法，为了安全有些服务器可能会禁止掉一些方法，例如：DELETE、PUT等。那么OPTIONS就是用来询问服务器支持的方法。</td></tr><tr><td style="text-align:center">HEAD</td><td style="text-align:left">获得报文首部。<br/>HEAD方法类似GET方法，但是不同的是HEAD方法不要求返回数据。通常用于确认URI的有效性及资源更新时间等。</td></tr><tr><td style="text-align:center">PUT</td><td style="text-align:left">传输文件。<br/>PUT方法用来传输文件。类似FTP协议，文件内容包含在请求报文的实体中，然后请求保存到URL指定的服务器位置。</td></tr><tr><td style="text-align:center">DELETE</td><td style="text-align:left">删除文件。<br/>请求服务器删除Request-URI所标识的资源</td></tr><tr><td style="text-align:center">TRACE</td><td style="text-align:left">追踪路径。<br/>回显服务器收到的请求，主要用于测试或诊断</td></tr><tr><td style="text-align:center">CONNECT</td><td style="text-align:left">要求用隧道协议连接代理。<br/>HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器</td></tr></tbody></table></div><p>在我们实际应用中常用的也就是 ：<strong>GET、POST</strong></p><h3 id="GET请求和POST请求的区别："><a href="#GET请求和POST请求的区别：" class="headerlink" title="GET请求和POST请求的区别："></a>GET请求和POST请求的区别：</h3><div class="table-container"><table><thead><tr><th>区别方式</th><th>GET请求</th><th>POST请求</th></tr></thead><tbody><tr><td>请求参数</td><td>请求参数在请求行中。<br/>例：/brand/findAll?name=OPPO&amp;status=1</td><td>请求参数在请求体中</td></tr><tr><td>请求参数长度</td><td>请求参数长度有限制(浏览器不同限制也不同)</td><td>请求参数长度没有限制</td></tr><tr><td>安全性</td><td>安全性低。原因：请求参数暴露在浏览器地址栏中。</td><td>安全性相对高</td></tr></tbody></table></div><h2 id="3-HTTP-响应协议"><a href="#3-HTTP-响应协议" class="headerlink" title="3.HTTP-响应协议"></a>3.HTTP-响应协议</h2><h3 id="一般格式"><a href="#一般格式" class="headerlink" title="一般格式"></a>一般格式</h3><p><img src="https://smartsageblogfile.oss-cn-beijing.aliyuncs.com/blogimages/202408072259815.jpg" alt=""> </p><p>服务器将数据以响应格式返回给浏览器，包括：<strong>状态行</strong> 、<strong>响应头</strong> 、<strong>空行</strong>、<strong>响应体</strong> </p><p><strong>状态行（Status Line）</strong></p><p>响应数据的第一行。响应行由<code>协议及版本</code>、<code>响应状态码</code>、<code>状态码描述</code>组成</p><p><strong>响应头（Response Headers）</strong></p><p>响应数据的第二行开始。格式为key：value形式</p><p>常见的HTTP响应头有:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Content-Type：表示该响应内容的类型，例如text/html，image/jpeg ；</span><br><span class="line"></span><br><span class="line">Content-Length：表示该响应内容的长度（字节数）；</span><br><span class="line"></span><br><span class="line">Content-Encoding：表示该响应压缩算法，例如gzip ；</span><br><span class="line"></span><br><span class="line">Cache-Control：指示客户端应如何缓存，例如max-age=300表示可以最多缓存300秒 ;</span><br><span class="line"></span><br><span class="line">Set-Cookie: 告诉浏览器为当前页面所在的域设置cookie ;</span><br></pre></td></tr></table></figure><p><strong>空行</strong></p><ul><li>响应头和响应体之间的分隔符，表示响应头的结束。</li></ul><p><strong>响应体（可选）：</strong></p><p>响应数据的最后一部分。存储响应的数据</p><ul><li>响应体和响应头之间有一个空行隔开（作用：用于标记响应头结束）</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaWeb </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTTP </tag>
+            
+            <tag> JavaWeb </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Welcome to My Blog!</title>
+      <link href="/2024/08/07/Welcome%20to%20My%20Blog/"/>
+      <url>/2024/08/07/Welcome%20to%20My%20Blog/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Welcome-to-My-Blog"><a href="#Welcome-to-My-Blog" class="headerlink" title="Welcome to My Blog!"></a>Welcome to My Blog!</h1><p><img src="https://smartsageblogfile.oss-cn-beijing.aliyuncs.com/blogimages/202408072258178.jpg" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Welcome </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Welcome </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
