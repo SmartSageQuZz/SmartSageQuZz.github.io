@@ -378,11 +378,6 @@ div#archive {
   position: relative;
 }
 
-/* 信息卡片彩带 */
-.author_top:hover {
-  background: url(https://tuchuang.voooe.cn/images/2023/01/02/snow.gif);
-  background-size: cover;
-}
 
 /* 个人信息卡片背景图
 [data-theme="light"] #aside-content > .card-widget.card-info {
