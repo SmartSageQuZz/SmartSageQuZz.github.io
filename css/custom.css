@@ -384,19 +384,19 @@ div#archive {
   background-size: cover;
 }
 
-/* 个人信息卡片背景图 */
+/* 个人信息卡片背景图
 [data-theme="light"] #aside-content > .card-widget.card-info {
-  background-image: url(https://smartsageblogfile.oss-cn-beijing.aliyuncs.com/blogimages/202408082311391.webp);
+  background-image: url(https://smartsageblogfile.oss-cn-beijing.aliyuncs.com/blogimages/202408091219259.webp);
   background-repeat: no-repeat;
   background-attachment: inherit;
   background-size: 100%;
 }
 [data-theme="dark"] #aside-content > .card-widget.card-info {
-  background-image: url(https://smartsageblogfile.oss-cn-beijing.aliyuncs.com/blogimages/202408082311391.webp);
+  background-image: url(https://smartsageblogfile.oss-cn-beijing.aliyuncs.com/blogimages/202408091210491.webp);
   background-repeat: no-repeat;
   background-attachment: inherit;
   background-size: 100%;
-}
+} */
 
 /* 头像呼吸灯 */
 [data-theme="light"] .avatar-img {
